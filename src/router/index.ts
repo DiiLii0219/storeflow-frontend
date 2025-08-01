@@ -8,4 +8,4 @@ const routes = [
 export const router = createRouter({
   history: createWebHistory(),
   routes,
-})
+})  
