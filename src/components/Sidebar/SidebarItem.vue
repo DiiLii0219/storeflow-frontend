@@ -22,7 +22,7 @@
 </template>
 
 <script setup lang="ts">
-import { defineProps, computed } from 'vue'
+import { computed } from 'vue'
 const props = defineProps<{ item: any }>()
 
 const hasChildren = computed(() => Array.isArray(props.item.children) && props.item.children.length > 0)
