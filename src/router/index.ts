@@ -1,8 +1,7 @@
 import { createRouter, createWebHistory } from "vue-router";
 import type { RouteRecordRaw } from "vue-router";
 import { setupPermissionGuard } from "./permission";
-import Layout from "@/layout/Layout.vue";
-
+import Layout from "@/layouts/Layout.vue"
 const routes: RouteRecordRaw[] = [
   {
     path: "/",
