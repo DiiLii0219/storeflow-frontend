@@ -5,6 +5,7 @@ export function setupPermissionGuard(router: Router) {
   router.beforeEach((to, from, next) => {
     const auth = useAuthStore()
     const isLoggedIn = auth.isLoggedIn
+    console.log(`User navigated from ${from.path} to ${to.path}`)
 
     if (to.meta.requiresAuth && !isLoggedIn) {
       next({ path: '/login' })
