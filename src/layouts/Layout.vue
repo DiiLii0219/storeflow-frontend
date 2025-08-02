@@ -1,20 +1,30 @@
 <template>
-  <div class="layout">
-    <Sidebar />
-    <div class="flex-1 flex flex-col h-screen">
-      <Header />
-      <router-view />
+  <div class="flex h-screen w-screen overflow-hidden">
+    <!-- Sidebar -->
+    <aside class="w-64 bg-gray-100 h-full">
+      <Sidebar />
+    </aside>
+
+    <!-- Right side: Header + RouterView -->
+    <div class="flex flex-col flex-1 min-w-0">
+      <!-- Header -->
+      <header class="h-16 bg-white shadow px-4 flex items-center justify-between">
+        <Header />
+      </header>
+
+      <!-- Main content -->
+      <main class="flex-1 overflow-auto bg-gray-50 p-4">
+        <router-view />
+      </main>
     </div>
   </div>
 </template>
 
 <script setup>
-import Sidebar from "@/components/Sidebar/index.vue";
-import Header from "@/components/Header/index.vue";
+import Sidebar from "@/components/Sidebar/index.vue"
+import Header from "@/components/Header/index.vue"
 </script>
 
 <style scoped>
-.layout {
-  display: flex;
-}
+/* 如果你不用 Tailwind，这里也可以写 CSS fallback */
 </style>
