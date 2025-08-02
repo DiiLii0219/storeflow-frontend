@@ -1,4 +1,6 @@
 <template>
+  <!-- Logo -->
+  <div class="text-xl font-bold cursor-pointer" @click="goHome">StoreFlow</div>
   <el-menu
     :default-active="route.path"
     router
@@ -23,4 +25,8 @@ const routes = computed(() => {
   // 取 layout 下的子路由
   return router.options.routes.find((r) => r.path === "/")?.children || [];
 });
+
+const goHome = () => {
+  router.push('/home')
+}
 </script>
