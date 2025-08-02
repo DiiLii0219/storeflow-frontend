@@ -4,7 +4,7 @@ import { setupPermissionGuard } from './permission'
 const routes = [
   {
     path: '/',
-    redirect: '/login'  // 👉 默认进入登录页面
+    redirect: '/login'
   },
   {
     path: '/login',
