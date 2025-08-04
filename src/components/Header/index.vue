@@ -4,7 +4,6 @@
     <el-dropdown trigger="click">
       <span class="cursor-pointer flex items-center">
         <el-avatar :size="32" :src="user.avatar" class="mr-2" />
-        <span class="text-sm text-gray-700">{{ user.name }}</span>
       </span>
       <template #dropdown>
         <el-dropdown-menu>

@@ -1,6 +1,7 @@
 <template>
   <!-- Logo -->
   <div class="text-xl font-bold cursor-pointer" @click="goHome">StoreFlow</div>
+  <!-- SiderBar -->
   <el-menu
     :default-active="route.path"
     router
