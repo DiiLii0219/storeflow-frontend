@@ -19,12 +19,18 @@ import { useRoute } from "vue-router";
 import SidebarItem from "./SidebarItem.vue";
 import { computed } from "vue";
 import { router } from "@/router";
+import Layout from "@/layouts/Layout.vue"
 
 const route = useRoute();
 
 const routes = computed(() => {
-  // 取 layout 下的子路由
-  return router.options.routes.find((r) => r.path === "/")?.children || [];
+  const result: any[] = []
+  router.options.routes.forEach((r) => {
+    if (r.component === Layout && r.children) {
+      result.push(...r.children.filter(child => child.meta?.title && !child.meta?.hidden))
+    }
+  })
+  return result
 });
 
 const goHome = () => {
