@@ -5,10 +5,6 @@
   <el-menu
     :default-active="route.path"
     router
-    class="el-menu-vertical-demo"
-    background-color="#304156"
-    text-color="#bfcbd9"
-    active-text-color="#409EFF"
   >
     <SidebarItem v-for="route in routes" :key="route.path" :item="route" />
   </el-menu>
