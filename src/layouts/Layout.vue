@@ -25,6 +25,3 @@ import Sidebar from "@/components/Sidebar/index.vue"
 import Header from "@/components/Header/index.vue"
 </script>
 
-<style scoped>
-/* 如果你不用 Tailwind，这里也可以写 CSS fallback */
-</style>

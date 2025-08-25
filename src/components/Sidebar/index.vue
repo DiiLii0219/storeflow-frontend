@@ -2,14 +2,17 @@
   <div class="h-full flex flex-col">
     <!-- 上部分：Logo + 主菜单 -->
     <div>
-      <!-- Logo -->
       <div class="text-xl font-bold cursor-pointer p-4" @click="goHome">
         StoreFlow
       </div>
 
-      <!-- SiderBar -->
       <el-menu :default-active="route.path" router>
-        <SidebarItem v-for="route in routes" :key="route.path" :item="route" />
+        <SidebarItem
+          v-for="route in routes"
+          :key="route.path"
+          :item="route"
+          :base-path="route.path"
+        />
       </el-menu>
     </div>
 
@@ -38,12 +41,12 @@ const routes = computed(() => {
   const result: any[] = [];
 
   router.options.routes.forEach((r) => {
-    // 有 title 的 Layout，说明是父菜单（如：库存）
+    // 有 title 的 Layout，作为父菜单
     if (r.component === Layout && r.meta?.title && !r.meta?.hidden) {
       result.push(r);
     }
 
-    // 处理那些 Layout 自身没有 meta.title，但是有默认子路由的情况（如：dashboard）
+    // Layout 无 meta.title，但有默认子路由（例如 dashboard）
     if (
       r.component === Layout &&
       r.children?.length === 1 &&
@@ -54,7 +57,7 @@ const routes = computed(() => {
       const child = r.children[0];
       result.push({
         ...child,
-        path: r.path, // 把 Layout 路由的 path 作为菜单的 index
+        path: r.path, // 用 Layout 路由的 path 作为菜单 index
       });
     }
   });

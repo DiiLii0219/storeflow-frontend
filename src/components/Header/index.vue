@@ -24,7 +24,7 @@ const router = useRouter();
 // 模拟用户信息（可替换为 pinia / api 数据）
 const user = {
   name: "Admin",
-  avatar: "https://i.pravatar.cc/150?img=3",
+  avatar: "",
 };
 
 const editProfile = () => {

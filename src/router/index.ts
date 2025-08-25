@@ -1,4 +1,4 @@
-import { createRouter, createWebHashHistory  } from "vue-router";
+import { createRouter, createWebHashHistory } from "vue-router";
 import type { RouteRecordRaw } from "vue-router";
 import { setupPermissionGuard } from "./permission";
 // import Layout from "@/layouts/Layout.vue"
@@ -14,6 +14,7 @@ import expensesRoutes from "./modules/expenses";
 import wechatRoutes from "./modules/wechat";
 import inventoryRoutes from "./modules/inventory";
 import collectionRoutes from "./modules/collection";
+import Layout from "@/layouts/Layout.vue";
 
 const routes: RouteRecordRaw[] = [
   {
@@ -24,6 +25,17 @@ const routes: RouteRecordRaw[] = [
     path: "/login",
     component: () => import("@/views/Login.vue"),
     meta: { requiresAuth: false },
+  },
+  {
+    path: "/settings",
+    component: Layout,
+    children: [
+      {
+        path: "",
+        name: "Setting",
+        component: () => import("@/views/setting/index.vue"),
+      },
+    ],
   },
   ...dashboardRoutes,
   ...bookingRoutes,
@@ -36,7 +48,7 @@ const routes: RouteRecordRaw[] = [
   ...expensesRoutes,
   ...wechatRoutes,
   ...inventoryRoutes,
-  ...collectionRoutes
+  ...collectionRoutes,
 ];
 
 export const router = createRouter({
