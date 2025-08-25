@@ -8,13 +8,13 @@ const inventoryRoutes: RouteRecordRaw[] = [
     meta: { title: "库存", icon: "/src/assets/icons/inventory.svg" },
     children: [
       {
-        path: "/dashboard",
+        path: "dashboard",
         name: "InventoryDashboard",
         component: () => import("@/views/inventory/index.vue"),
         meta: { title: "数据看板", icon: "PieChart" },
       },
       {
-        path: "/manage",
+        path: "manage",
         name: "InventoryManage",
         component: () => import("@/views/inventory/index.vue"),
         meta: { title: "库存管理", icon: "Box" },

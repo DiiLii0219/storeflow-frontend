@@ -17,3 +17,4 @@ for (const [key, component] of Object.entries(ElementPlusIconsVue)) {
 
 
 app.use(pinia).use(router).use(ElementPlus).mount("#app");
+

@@ -1,10 +1,28 @@
 <template>
-  <!-- Logo -->
-  <div class="text-xl font-bold cursor-pointer" @click="goHome">StoreFlow</div>
-  <!-- SiderBar -->
-  <el-menu :default-active="route.path" router>
-    <SidebarItem v-for="route in routes" :key="route.path" :item="route" />
-  </el-menu>
+  <div class="h-full flex flex-col">
+    <!-- 上部分：Logo + 主菜单 -->
+    <div>
+      <!-- Logo -->
+      <div class="text-xl font-bold cursor-pointer p-4" @click="goHome">
+        StoreFlow
+      </div>
+
+      <!-- SiderBar -->
+      <el-menu :default-active="route.path" router>
+        <SidebarItem v-for="route in routes" :key="route.path" :item="route" />
+      </el-menu>
+    </div>
+
+    <!-- 下部分：更多设置 -->
+    <div class="mt-auto">
+      <el-menu :default-active="route.path" router>
+        <el-menu-item index="/settings">
+          <el-icon><Setting /></el-icon>
+          <span>更多设置</span>
+        </el-menu-item>
+      </el-menu>
+    </div>
+  </div>
 </template>
 
 <script setup lang="ts">
@@ -45,6 +63,6 @@ const routes = computed(() => {
 });
 
 const goHome = () => {
-  router.push("/home");
+  router.push("/dashboard");
 };
 </script>
