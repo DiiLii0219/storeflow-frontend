@@ -27,7 +27,7 @@ const handleLogin = () => {
   };
 
   auth.login(fakeToken, fakeUser);
-  router.push("/home"); // 跳转到主页
+  router.push("/dashboard"); // 跳转到主页
 };
 </script>
 

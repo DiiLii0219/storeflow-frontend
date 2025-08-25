@@ -1,7 +1,20 @@
 import { createRouter, createWebHistory } from "vue-router";
 import type { RouteRecordRaw } from "vue-router";
 import { setupPermissionGuard } from "./permission";
-import Layout from "@/layouts/Layout.vue"
+// import Layout from "@/layouts/Layout.vue"
+import dashboardRoutes from "./modules/dashboard";
+import bookingRoutes from "./modules/booking";
+import roomRoutes from "./modules/room";
+import billingRoutes from "./modules/billing";
+import ordersRoutes from "./modules/orders";
+import marketingRoutes from "./modules/marketing";
+import memberRoutes from "./modules/member";
+import analyticsRoutes from "./modules/analytics";
+import expensesRoutes from "./modules/expenses";
+import wechatRoutes from "./modules/wechat";
+import inventoryRoutes from "./modules/inventory";
+import collectionRoutes from "./modules/collection";
+
 const routes: RouteRecordRaw[] = [
   {
     path: "/",
@@ -12,18 +25,18 @@ const routes: RouteRecordRaw[] = [
     component: () => import("@/views/Login.vue"),
     meta: { requiresAuth: false },
   },
-  {
-    path: "/home",
-    component: Layout, // 用 Layout 作为父组件
-    children: [
-      {
-        path: "", // 注意这里 path 为空，表示默认子路由
-        name: "Home",
-        component: () => import("@/views/Home.vue"),
-        meta: { title: "主页", icon: "HomeFilled" },
-      },
-    ],
-  },
+  ...dashboardRoutes,
+  ...bookingRoutes,
+  ...roomRoutes,
+  ...billingRoutes,
+  ...ordersRoutes,
+  ...marketingRoutes,
+  ...memberRoutes,
+  ...analyticsRoutes,
+  ...expensesRoutes,
+  ...wechatRoutes,
+  ...inventoryRoutes,
+  ...collectionRoutes
 ];
 
 export const router = createRouter({
