@@ -11,6 +11,27 @@ importers:
       '@element-plus/icons-vue':
         specifier: ^2.3.1
         version: 2.3.1(vue@3.5.18(typescript@5.8.3))
+      '@fullcalendar/core':
+        specifier: ^6.1.19
+        version: 6.1.19
+      '@fullcalendar/daygrid':
+        specifier: ^6.1.19
+        version: 6.1.19(@fullcalendar/core@6.1.19)
+      '@fullcalendar/interaction':
+        specifier: ^6.1.19
+        version: 6.1.19(@fullcalendar/core@6.1.19)
+      '@fullcalendar/resource':
+        specifier: ^6.1.19
+        version: 6.1.19(@fullcalendar/core@6.1.19)
+      '@fullcalendar/resource-timegrid':
+        specifier: ^6.1.19
+        version: 6.1.19(@fullcalendar/core@6.1.19)(@fullcalendar/resource@6.1.19(@fullcalendar/core@6.1.19))
+      '@fullcalendar/timegrid':
+        specifier: ^6.1.19
+        version: 6.1.19(@fullcalendar/core@6.1.19)
+      '@fullcalendar/vue3':
+        specifier: ^6.1.19
+        version: 6.1.19(@fullcalendar/core@6.1.19)(vue@3.5.18(typescript@5.8.3))
       axios:
         specifier: ^1.11.0
         version: 1.11.0
@@ -251,6 +272,52 @@ packages:
 
   '@floating-ui/utils@0.2.10':
     resolution: {integrity: sha512-aGTxbpbg8/b5JfU1HXSrbH3wXZuLPJcNEcZQFMxLs3oSzgtVu6nFPkbbGGUvBcUjKV2YyB9Wxxabo+HEH9tcRQ==}
+
+  '@fullcalendar/core@6.1.19':
+    resolution: {integrity: sha512-z0aVlO5e4Wah6p6mouM0UEqtRf1MZZPt4mwzEyU6kusaNL+dlWQgAasF2cK23hwT4cmxkEmr4inULXgpyeExdQ==}
+
+  '@fullcalendar/daygrid@6.1.19':
+    resolution: {integrity: sha512-IAAfnMICnVWPjpT4zi87i3FEw0xxSza0avqY/HedKEz+l5MTBYvCDPOWDATpzXoLut3aACsjktIyw9thvIcRYQ==}
+    peerDependencies:
+      '@fullcalendar/core': ~6.1.19
+
+  '@fullcalendar/interaction@6.1.19':
+    resolution: {integrity: sha512-GOciy79xe8JMVp+1evAU3ytdwN/7tv35t5i1vFkifiuWcQMLC/JnLg/RA2s4sYmQwoYhTw/p4GLcP0gO5B3X5w==}
+    peerDependencies:
+      '@fullcalendar/core': ~6.1.19
+
+  '@fullcalendar/premium-common@6.1.19':
+    resolution: {integrity: sha512-bOWHm1u1dUy6M4fQ0hNK7qEI7SrVWrN1ovv/z4/FE/ybfM19ukz7SFs907Ur7KUBWLNKTQYXBtdrY/ginwWraw==}
+    peerDependencies:
+      '@fullcalendar/core': ~6.1.19
+
+  '@fullcalendar/resource-daygrid@6.1.19':
+    resolution: {integrity: sha512-ylcPQwxwbMS4sIvhwJltNWUZhCinD/IhsYvIxfv/wXb0UBds8d9zacPEjcRRKiXShXj/95W/YWVF+9JcCiRfIQ==}
+    peerDependencies:
+      '@fullcalendar/core': ~6.1.19
+      '@fullcalendar/resource': ~6.1.19
+
+  '@fullcalendar/resource-timegrid@6.1.19':
+    resolution: {integrity: sha512-Y16w/Z28gZwAVxVKmicKjbaSY4DixV9canEeY2A09Ka3golaxSrTDQ72PMbxzPGEMv3S7HaqDojofNsfh+wH/g==}
+    peerDependencies:
+      '@fullcalendar/core': ~6.1.19
+      '@fullcalendar/resource': ~6.1.19
+
+  '@fullcalendar/resource@6.1.19':
+    resolution: {integrity: sha512-br1ylX/aIOfd8m7Tzl2LpJBSI+N9Q6aS1qw7K9qnQjYXWQyHBlfLG6ZcPmmkjfaqTUJc8ARRbtNWj1ts5qOZgQ==}
+    peerDependencies:
+      '@fullcalendar/core': ~6.1.19
+
+  '@fullcalendar/timegrid@6.1.19':
+    resolution: {integrity: sha512-OuzpUueyO9wB5OZ8rs7TWIoqvu4v3yEqdDxZ2VcsMldCpYJRiOe7yHWKr4ap5Tb0fs7Rjbserc/b6Nt7ol6BRg==}
+    peerDependencies:
+      '@fullcalendar/core': ~6.1.19
+
+  '@fullcalendar/vue3@6.1.19':
+    resolution: {integrity: sha512-j5eUSxx0xIy3ADljo0f5B9PhjqXnCQ+7nUMPfsslc2eGVjp4F74YvY3dyd6OBbg13IvpsjowkjncGipYMQWmTA==}
+    peerDependencies:
+      '@fullcalendar/core': ~6.1.19
+      vue: ^3.0.11
 
   '@isaacs/fs-minipass@4.0.1':
     resolution: {integrity: sha512-wgm9Ehl2jpeqP3zw/7mo3kRHFp5MEDhqAdwy1fTGkHAwnkGOVsgpvQhL8B5n1qlb01jV3n/bI0ZfZp5lWA1k4w==}
@@ -1039,6 +1106,9 @@ packages:
     resolution: {integrity: sha512-3Ybi1tAuwAP9s0r1UQ2J4n5Y0G05bJkpUIO0/bI9MhwmD70S5aTWbXGBwxHrelT+XM1k6dM0pk+SwNkpTRN7Pg==}
     engines: {node: ^10 || ^12 || >=14}
 
+  preact@10.12.1:
+    resolution: {integrity: sha512-l8386ixSsBdbreOAkqtrwqHwdvR35ID8c3rKPa8lCWuO86dBi32QWHV4vfsZK1utLLFMvw+Z5Ad4XLkZzchscg==}
+
   proxy-from-env@1.1.0:
     resolution: {integrity: sha512-D+zkORCbA9f1tdWRK0RaCR3GPv50cMxcrz4X8k5LTSUD1Dkw47mKJEZQNunItRTkWwgtaUSo1RVFRIG9ZXiFYg==}
 
@@ -1289,6 +1359,52 @@ snapshots:
       '@floating-ui/utils': 0.2.10
 
   '@floating-ui/utils@0.2.10': {}
+
+  '@fullcalendar/core@6.1.19':
+    dependencies:
+      preact: 10.12.1
+
+  '@fullcalendar/daygrid@6.1.19(@fullcalendar/core@6.1.19)':
+    dependencies:
+      '@fullcalendar/core': 6.1.19
+
+  '@fullcalendar/interaction@6.1.19(@fullcalendar/core@6.1.19)':
+    dependencies:
+      '@fullcalendar/core': 6.1.19
+
+  '@fullcalendar/premium-common@6.1.19(@fullcalendar/core@6.1.19)':
+    dependencies:
+      '@fullcalendar/core': 6.1.19
+
+  '@fullcalendar/resource-daygrid@6.1.19(@fullcalendar/core@6.1.19)(@fullcalendar/resource@6.1.19(@fullcalendar/core@6.1.19))':
+    dependencies:
+      '@fullcalendar/core': 6.1.19
+      '@fullcalendar/daygrid': 6.1.19(@fullcalendar/core@6.1.19)
+      '@fullcalendar/premium-common': 6.1.19(@fullcalendar/core@6.1.19)
+      '@fullcalendar/resource': 6.1.19(@fullcalendar/core@6.1.19)
+
+  '@fullcalendar/resource-timegrid@6.1.19(@fullcalendar/core@6.1.19)(@fullcalendar/resource@6.1.19(@fullcalendar/core@6.1.19))':
+    dependencies:
+      '@fullcalendar/core': 6.1.19
+      '@fullcalendar/premium-common': 6.1.19(@fullcalendar/core@6.1.19)
+      '@fullcalendar/resource': 6.1.19(@fullcalendar/core@6.1.19)
+      '@fullcalendar/resource-daygrid': 6.1.19(@fullcalendar/core@6.1.19)(@fullcalendar/resource@6.1.19(@fullcalendar/core@6.1.19))
+      '@fullcalendar/timegrid': 6.1.19(@fullcalendar/core@6.1.19)
+
+  '@fullcalendar/resource@6.1.19(@fullcalendar/core@6.1.19)':
+    dependencies:
+      '@fullcalendar/core': 6.1.19
+      '@fullcalendar/premium-common': 6.1.19(@fullcalendar/core@6.1.19)
+
+  '@fullcalendar/timegrid@6.1.19(@fullcalendar/core@6.1.19)':
+    dependencies:
+      '@fullcalendar/core': 6.1.19
+      '@fullcalendar/daygrid': 6.1.19(@fullcalendar/core@6.1.19)
+
+  '@fullcalendar/vue3@6.1.19(@fullcalendar/core@6.1.19)(vue@3.5.18(typescript@5.8.3))':
+    dependencies:
+      '@fullcalendar/core': 6.1.19
+      vue: 3.5.18(typescript@5.8.3)
 
   '@isaacs/fs-minipass@4.0.1':
     dependencies:
@@ -1991,6 +2107,8 @@ snapshots:
       nanoid: 3.3.11
       picocolors: 1.1.1
       source-map-js: 1.2.1
+
+  preact@10.12.1: {}
 
   proxy-from-env@1.1.0: {}
 
