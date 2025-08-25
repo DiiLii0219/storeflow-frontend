@@ -2,10 +2,6 @@
   <div class="h-full flex flex-col">
     <!-- 上部分：Logo + 主菜单 -->
     <div>
-      <div class="text-xl font-bold cursor-pointer p-4" @click="goHome">
-        StoreFlow
-      </div>
-
       <el-menu :default-active="route.path" router>
         <SidebarItem
           v-for="route in routes"
